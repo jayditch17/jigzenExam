@@ -67,7 +67,9 @@ class LoginController extends Controller
             $createUser = new User;
             $createUser->name = $fbuser->name;
             $createUser->email = $fbuser->email;
-         $createUser->password = bcrypt('123456789');
+             $createUser->password = bcrypt('123456789');
+             $createUser->avatar =$fbuser->avatar;
+             $createUser->remember_token=$fbuser->access_token;
             $createUser->save();
             Auth::login($createUser);
             return redirect()->route('home');
