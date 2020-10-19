@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
 use Auth;
+use File;
 
 class LoginController extends Controller
 {
@@ -69,10 +70,13 @@ class LoginController extends Controller
             $createUser->email = $fbuser->email;
              $createUser->password = bcrypt('123456789');
              $createUser->avatar =$fbuser->avatar;
-             $createUser->remember_token=$fbuser->access_token;
+             
+            //  $createUser->remember_token=$fbuser->access_token;
             $createUser->save();
             Auth::login($createUser);
             return redirect()->route('home');
         }
     }
+
+
 }
