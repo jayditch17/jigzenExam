@@ -35,8 +35,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                                <a class="nav-link" href="/show">Manage Users</a>
-                                </li>
+                                <!-- <a class="nav-link" href="/show">Manage Users</a>
+                                </li> -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -52,6 +52,11 @@
                                 </li>
                             @endif
                         @else
+                        <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                <a class="nav-link" href="/show">Manage Users</a>
+                                </li>
+                        </ul>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{Auth::user()->avatar}}" class="rounded mr-1" height="30px"> {{ Auth::user()->name }}
